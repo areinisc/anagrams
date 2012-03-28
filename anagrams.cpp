@@ -54,7 +54,7 @@ int main() {
     for (int i = 0; i < runs; i++) {
         cin >> initial;         // Store initial string
         cin >> goal;            // Store goal; expected permutation string
-        cout << "Output for " << initial << goal << endl << "[" << endl;
+        cout << "Output for " << initial << " " << goal << endl << "[" << endl;
         solve(goal, initial, stack, output, moves); // RECURSION!
         cout << "]" << endl;
     }

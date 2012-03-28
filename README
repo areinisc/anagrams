@@ -9,7 +9,9 @@ Author(s): Alex Reinisch, Nick Walker
 Date(s): 27-30 March 2012
 
 Comments:
-    I've set up a git repo for our code.
+*   I've set up a git repo for our code.
+*   Done with skeleton code.
+*   First draft complete. Solve should work. I think everything should work. Let's get ready to fix it.
 
 Summary:
-    Our program doesn't have much functionality yet.
+    We recursively call a method 'solve' to find all possible permutations of pushes and pops that will create a given output string from a given input string. This implementation expects to be told the number of input/output pairs it will test and then repeats its solving method for each pair.

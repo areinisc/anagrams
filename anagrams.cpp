@@ -9,6 +9,7 @@ using namespace std;
 
 int runs(0);                    // Number of test cases the user will input
 string initial(""), goal("");   // Input and expected output strings
+string stack(""), output(""), moves("");    // other necessary strings
 
 void solve(const string& goal,  // the goal string
         const string& I,        // unused portion of "initial" string
@@ -48,7 +49,7 @@ int main() {
         cin >> initial;         // Store initial string
         cin >> goal;            // Store goal; expected permutation string
         cout << "Output for " << initial << goal << endl << "[" << endl;
-        solve(goal, initial, stack, output, moves)// RECURSION!
+        solve(goal, initial, stack, output, moves); // RECURSION!
         cout << "]" << endl;
     }
     return 0;

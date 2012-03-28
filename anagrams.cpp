@@ -18,26 +18,32 @@ void solve(const string& goal,  // the goal string
         const string& moves     // '++-+-' style trace of moves thus far
         ) {
     if (O == goal) {
-        cout << moves << endl;
+        cout << moves << endl;  // output fully matches goal; print moves
     }
-    //else if (S != goal.substr(0,S.length())) {
-    //    break;                  // Permutation doesn't match goal
-    //}
+    else if (O != goal.substr(0,O.length())) {
+        return;                 // output so far doesn't match goal
+    }
     else {
-        if (!I.empty()) {                       // PUSH //
-            solve(  goal,                       // same goal
-                    I.substr(1,I.length()-1),   // initial -1 from beginning
-                    S.append(I[I.length()-1]),  // stack with push to end
-                    O,                          // output unchanged
-                    moves.append('+')           // moves with push char added
+        if (!I.empty()) {                           // PUSH //
+            string i = I.substr(1,I.length()-1);
+            string s = S + I[0];
+            string m = moves + "+";
+            solve(  goal,       // same goal
+                    i,          // initial -1 from beginning
+                    s,          // stack with push to end
+                    O,          // output unchanged
+                    m           // moves with push char added
                  );  
         }
-        if (!S.empty()) {                       // POP //
-            solve(  goal,                       // same goal
-                    I,                          // initial string unchanged
-                    S.substr(0,S.length()-1),   // stack with pop from end
-                    O.insert(1,S.substr(S.length(),1)), // output with stack.pop at beginning
-                    moves.append('-')           // moves with pop char
+        if (!S.empty()) {                           // POP //
+            string s = S.substr(0,S.length()-1);
+            string o = O + S[S.length()-1];
+            string m = moves + "-";
+            solve(  goal,       // same goal
+                    I,          // initial string unchanged
+                    s,          // stack with pop from end
+                    o,          // output with stack.pop at beginning
+                    m           // moves with pop char
                  );
         }
     }

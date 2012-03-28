@@ -15,3 +15,5 @@ Comments:
 *   Done with skeleton code.
 *   First draft complete. Solve should work. I think everything should work. Let's get ready to fix it.
 *   Basic fixes made. Won't compile. Angry about the difference between const char and const char*. I'll ask Dr. Goldwasser what's going on.
+*   Making new local variables to pass changed values in recursion calls.
+*   Success on examples! Version 1.0.0 complete.
